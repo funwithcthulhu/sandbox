@@ -1,4 +1,6 @@
 # implementation of bubble sort algorithm with for loop
+# O(n^2) Omega(n)
+
 def bubble_sort(arr)
   swap = -1
 

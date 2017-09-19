@@ -1,4 +1,5 @@
 # counting sort in ruby
+# O(n)
 
 def counting_sort(arr, n = nil)
   n ||= arr.size
