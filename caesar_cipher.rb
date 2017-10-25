@@ -1,9 +1,10 @@
 def caesar_cipher(string, shift)
+  parse = ->(l, mod) { (mod + (l.ord - mod + (shift % 26)) % 26).chr }
   string.split(//).map do |l|
     if l =~ /[A-Z]/
-      (65 + (l.ord - 65 + (shift % 26)) % 26).chr
+      parse[l, 64]
     elsif l =~ /[a-z]/
-      (97 + (l.ord - 97 + (shift % 26)) % 26).chr
+      parse[l, 97]
     else
       l
     end
