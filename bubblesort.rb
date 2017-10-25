@@ -31,12 +31,10 @@ def bubble_sort(arr)
   swap = -1
   while swap != 0
     swap = 0
-    n = arr.size
-    (n - 1).times do |i|
-      if arr[i] > arr[i + 1]
-        arr[i], arr[i + 1] = arr[i + 1], arr[i]
-        swap += 1
-      end
+    n = arr.size - 1
+    n.times do |i|
+      swap += 1 if arr[i] > arr[i + 1]
+      arr[i], arr[i + 1] = arr[i + 1], arr[i] if arr[i] > arr[i + 1]
     end
   end
   arr
