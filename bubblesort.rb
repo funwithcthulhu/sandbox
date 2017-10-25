@@ -9,32 +9,32 @@ def bubble_sort(arr)
 
     # set swap to 0 so we can check for swaps
     swap = 0
-    n = arr.size
+    n = arr.size - 2
 
     # don't compare last element in array to nil
-    for i in (0..n - 2)
+    (0..n).each do |i|
 
       # look at adjacent elements, if in wrong order, swap them
-      if arr[i] > arr[i + 1]
-        arr[i], arr[i + 1] = arr[i + 1], arr[i]
+      next unless arr[i] > arr[i + 1]
+      arr[i], arr[i + 1] = arr[i + 1], arr[i]
 
-        # add a swap counter if we swapped something
-        swap += 1
-      end
+      # add a swap counter if we swapped something
+      swap += 1
     end
   end
   arr
 end
 
-# more "ruby-like" implementation with .times instead of for-loop
+# with .times instead of .each
 def bubble_sort(arr)
   swap = -1
   while swap != 0
     swap = 0
     n = arr.size - 1
     n.times do |i|
-      swap += 1 if arr[i] > arr[i + 1]
-      arr[i], arr[i + 1] = arr[i + 1], arr[i] if arr[i] > arr[i + 1]
+      next unless arr[i] > arr[i + 1]
+      swap += 1
+      arr[i], arr[i + 1] = arr[i + 1], arr[i]
     end
   end
   arr
