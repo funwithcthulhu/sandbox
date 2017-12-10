@@ -91,7 +91,7 @@ bool valid_subgrids(arr_arr_char grid)
 						if (table[grid.arr[i].arr[q]] > 1)
 						{
                             printf("%c\n", grid.arr[i].arr[q]);
-							return false;
+                            return false;
 						}
 					}
 				}
